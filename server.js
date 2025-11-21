@@ -9,15 +9,14 @@ import bodyParser from "body-parser";
 
 
 const app = express();
-app.use(cors(
-  {
-    origin: [
-      "http://localhost:5173",
-      "https://peer-project-front-end-final-projec.vercel.app" // change after deploy
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-  }
-));
+app.use(cors({
+  origin: [
+    "https://peer-project-front-end-final-projec.vercel.app",
+    "http://localhost:5173"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(bodyParser.json());
 app.use(express.json());
 

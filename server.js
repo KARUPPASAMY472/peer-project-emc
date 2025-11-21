@@ -9,13 +9,7 @@ import feedbackRoutes from "./routes/feedbackRoutes.js";
 
 const app = express();
 app.use(cors(
-  {
-    origin: [
-      "http://localhost:5173",
-      "https://peer-project-front-end.vercel.app/" // change after deploy
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-  }
+  
 ));
 app.use(express.json());
 

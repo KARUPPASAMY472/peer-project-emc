@@ -12,7 +12,7 @@ app.use(cors(
   {
     origin: [
       "http://localhost:5173",
-      "" // change after deploy
+      "https://peer-project-front-end.vercel.app/" // change after deploy
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
   }
@@ -29,7 +29,7 @@ app.use("/feedback", feedbackRoutes);
 app.get("/", (req, res) => res.json({ ok: true }));
 
 // Connect to MongoDB - set MONGO_URI in env or replace below
-const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/peer";
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://mksamy:12345@cluster0.hh7j086.mongodb.net/peer";
 mongoose.connect(MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error("MongoDB error:", err));

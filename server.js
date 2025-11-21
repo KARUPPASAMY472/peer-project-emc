@@ -13,7 +13,7 @@ app.use(cors(
   {
     origin: [
       "http://localhost:5173",
-      "https://peer-project-front-end.vercel.app/" // change after deploy
+      "https://peer-project-front-end.vercel.app" // change after deploy
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
   }

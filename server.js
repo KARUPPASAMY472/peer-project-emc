@@ -5,6 +5,7 @@ import projectRoutes from "./routes/projectRoutes.js";
 import commentRoutes from "./routes/commentRoutes.js";
 import bookmarkRoutes from "./routes/bookmarkRoutes.js";
 import feedbackRoutes from "./routes/feedbackRoutes.js";
+import bodyParser from "body-parser";
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(cors(
     methods: ["GET", "POST", "PUT", "DELETE"],
   }
 ));
+app.use(bodyParser.json());
 app.use(express.json());
 
 // Mount routers

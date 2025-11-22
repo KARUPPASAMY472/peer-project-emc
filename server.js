@@ -11,7 +11,7 @@ import bodyParser from "body-parser";
 const app = express();
 app.use(cors({
   origin: [
-    "https://peer-project-front-end-final-projec.vercel.app",
+    "https://peer-project-front-end-final-proj.vercel.app",
     "http://localhost:5173"
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],

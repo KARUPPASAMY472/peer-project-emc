@@ -15,6 +15,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.delete("/:projectId", async (req, res) => {
+  try {
+    const { projectId } = req.params;
+    const { userUid } = req.query;
+
+    await Bookmark.findOneAndDelete({ userUid, projectId });
+    res.json({ message: "Removed" });
+  } catch (err) {
+    res.status(500).json({ message: "Failed to remove" });
+  }
+});
+
+
 // 🔥 CHECK bookmark (very important)
 router.get("/check", async (req, res) => {
   try {
